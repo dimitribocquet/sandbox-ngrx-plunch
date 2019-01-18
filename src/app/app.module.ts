@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
 
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       name: 'Plunch',
       maxAge: 15
