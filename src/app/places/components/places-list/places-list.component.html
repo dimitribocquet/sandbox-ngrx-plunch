@@ -1,5 +1,12 @@
 <h2>Restaurants</h2>
 
-<div *ngIf="places$ | async as places">
-  {{ places | json }}
+<div *ngIf="places">
+  <div *ngFor="let place of places.places">
+    <b>{{ place.name }}</b>
+    <br>{{ place.street }}
+    <br>{{ place.zip }}
+    <br>{{ place.town }}
+    <hr>
+
+  </div>
 </div>

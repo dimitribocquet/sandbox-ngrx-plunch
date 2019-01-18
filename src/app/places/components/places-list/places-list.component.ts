@@ -1,8 +1,5 @@
 import { Place } from './../../place';
-import { Load } from './../../state/place.actions';
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'cc-places-list',
@@ -10,13 +7,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./places-list.component.css']
 })
 export class PlacesListComponent implements OnInit {
-  places$: any;
+  @Input() places: Place[];
 
-  constructor(private store: Store<any>) { }
+  constructor() { }
 
   ngOnInit() {
-    this.store.dispatch(new Load());
-    this.places$ = this.store.pipe(select('places')) as Observable<Place[]>;
+
   }
 
 }
